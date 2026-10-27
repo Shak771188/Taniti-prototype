@@ -188,3 +188,10 @@ calendarEl.addEventListener('click', (e) => {
 });
 
 updateDates();   // draws the calendar the first time
+// ----- number of travelers -----
+const travelersSel = document.getElementById('travelers');
+travelersSel.addEventListener('change', () => {
+  document.querySelectorAll('.trip-travelers').forEach(el => {
+    el.textContent = travelersSel.value;
+  });
+});
