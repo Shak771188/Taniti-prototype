@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taniti Tourism</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>TANITI</h1>
+    <button id="menu-btn" aria-label="Open menu">&#9776;</button>
+    <nav id="menu" class="hidden">
+      <button data-screen="home">Home</button>
+      <button data-screen="booking">Booking</button>
+      <button data-screen="lodging">Lodging</button>
+      <button data-screen="dining">Dining</button>
+      <button data-screen="activities">Activities &amp; Excursions</button>
+      <button data-screen="faqs">FAQs</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="home" class="screen active">
+      <h2>Welcome</h2>
+      <p>We look forward to you visiting our paradise. Taniti is a small, tropical island located in the Pacific. While you are here enjoy our sandy and rocky beaches, tropical rainforest, and beautiful mountains. Many other activities can be found on the north side of Yellow Leaf Bay at Merriton Landing.</p>
+
+      <div class="box" id="calendar-box">
+        <h3>Events Calendar</h3>
+        <p><strong>November 2026</strong></p>
+        <div id="calendar"></div>
+        <div id="event-details"><p>Tap a date to see events.</p></div>
+        <a href="#" class="link" data-screen="booking">Done – back to Booking</a>
+      </div>
+
+      <div class="box">
+        <h3>Travel &amp; Transportation</h3>
+        <p>You can reach our island by air. Our small airport welcomes small jets and propellers. If arriving by cruise, we offer docking once a week at Yellow Leaf Bay. Public buses serve Taniti City and run from 5 a.m. to 11 p.m. every day. Private buses serve the rest of the island. Taxis are available in Taniti City, and rental cars can be rented from a local rental agency near the airport. Bikes and helmets are available to rent from several vendors (helmets are required by law).</p>
+        <a href="#" class="link" data-screen="faqs">Get more info here</a>
+      </div>
+    </section>
+
+    <section id="booking" class="screen">
+      <h2>Booking</h2>
+
+      <label class="sort">Sort By
+        <select class="sort-select" data-list="room-list">
+          <option value="sleeps">Group Size</option>
+          <option value="price">Price</option>
+          <option value="rating">Rating</option>
+        </select>
+      </label>
+      <p><a href="#" class="link" data-screen="home" data-scroll="calendar-box">Dates: <span class="trip-dates">11/26 – 11/30</span> (tap to change)</a> | Travelers: 4</p>
+
+      <div id="room-list">
+        <article class="room" data-sleeps="6" data-price="1500" data-rating="5">
+          <h3>Resort Name – Rating 5</h3>
+          <p>Sleeps 4+ · Resort 1 Bedroom Family Suite · $1,500</p>
+          <label><input type="checkbox" class="trip-item" data-id="resort"
+            data-label="Resort 1 Bedroom Family Suite" data-price="1500" data-group="room"> Select</label>
+        </article>
+
+        <article class="room" data-sleeps="4" data-price="1200" data-rating="4">
+          <h3>Hotel Name – Rating 4</h3>
+          <p>Sleeps 4+ · Family Room · $1,200</p>
+          <label><input type="checkbox" class="trip-item" data-id="hotel"
+            data-label="Hotel Family Room" data-price="1200" data-group="room"> Select</label>
+        </article>
+      </div>
+
+      <div class="box">
+        <h3>Add-On &amp; Save</h3>
+        <label><input type="checkbox" class="trip-item" data-id="transport"
+          data-label="Transportation – Taxi" data-price="100" data-group="addon"> Transportation</label>
+        <label><input type="checkbox" class="trip-item" data-id="rest1"
+          data-label="Dining – Restaurant Name" data-price="250" data-group="dining"> Dining</label>
+        <label><input type="checkbox" class="trip-item" data-id="exc1"
+          data-label="Excursion – Helicopter Ride" data-price="150" data-group="excursion"> Excursions/Activities</label>
+      </div>
+    </section>
+
+    <section id="lodging" class="screen">
+      <h2>Lodging</h2>
+      <p>From our luxury resort to family-run Bed &amp; Breakfast, you are sure to find the perfect stay!</p>
+      <label class="sort">Sort By
+        <select class="sort-select" data-list="lodging-list">
+          <option value="sleeps">Group Size</option>
+          <option value="price">Price</option>
+          <option value="rating">Rating</option>
+        </select>
+      </label>
+      <div id="lodging-list">
+        <article class="room" data-sleeps="6" data-price="1500" data-rating="5">
+          <h3>Resort Name – Rating 5</h3>
+          <p>Sleeps 4+ · Resort 1 Bedroom Family Suite · $1,500</p>
+          <label><input type="checkbox" class="trip-item" data-id="resort"
+            data-label="Resort 1 Bedroom Family Suite" data-price="1500" data-group="room"> Select</label>
+        </article>
+        <article class="room" data-sleeps="4" data-price="1200" data-rating="4">
+          <h3>Hotel Name – Rating 4</h3>
+          <p>Sleeps 4+ · Family Room · $1,200</p>
+          <label><input type="checkbox" class="trip-item" data-id="hotel"
+            data-label="Hotel Family Room" data-price="1200" data-group="room"> Select</label>
+        </article>
+      </div>
+    </section>
+
+    <section id="dining" class="screen">
+      <h2>Dining</h2>
+      <p>Enjoy authentic flavors from a variety of our local dining experiences</p>
+      <label class="sort">Sort By
+        <select class="sort-select" data-list="dining-list">
+          <option value="type">Type</option>
+          <option value="price">Price</option>
+          <option value="rating">Rating</option>
+        </select>
+      </label>
+      <div id="dining-list">
+        <article class="room" data-type="Local" data-price="250" data-rating="5">
+          <h3>Restaurant Name</h3>
+          <p>Local fish and rice · $250</p>
+          <label><input type="checkbox" class="trip-item" data-id="rest1"
+            data-label="Dining – Restaurant Name" data-price="250" data-group="dining"> Add to Trip</label>
+        </article>
+        <article class="room" data-type="Pan-Asian" data-price="180" data-rating="4">
+          <h3>Restaurant Name</h3>
+          <p>Pan-Asian · $180</p>
+          <label><input type="checkbox" class="trip-item" data-id="rest2"
+            data-label="Dining – Pan-Asian Restaurant" data-price="180" data-group="dining"> Add to Trip</label>
+        </article>
+      </div>
+    </section>
+
+    <section id="activities" class="screen">
+      <h2>Excursions &amp; Activities</h2>
+      <p>Whether solo or in a group, we have something for you to do!</p>
+
+      <h3>Activities</h3>
+      <article class="room">
+        <h4>Volcano Hiking</h4>
+        <p>Group led hiking adventure on an active volcano – $50 · Near Merriton Landing, Yellow Leaf Bay</p>
+        <label><input type="checkbox" class="trip-item" data-id="act1"
+          data-label="Activity – Volcano Hiking" data-price="50" data-group="activity"> Select</label>
+      </article>
+      <article class="room">
+        <h4>Rainforest Ziplining</h4>
+        <p>Zip-line through a tropical rainforest – $40</p>
+        <label><input type="checkbox" class="trip-item" data-id="act2"
+          data-label="Activity – Rainforest Ziplining" data-price="40" data-group="activity"> Select</label>
+      </article>
+
+      <h3>Excursions</h3>
+      <article class="room">
+        <h4>Helicopter Ride</h4>
+        <p>Helicopter ride over island – $150</p>
+        <label><input type="checkbox" class="trip-item" data-id="exc1"
+          data-label="Excursion – Helicopter Ride" data-price="150" data-group="excursion"> Select</label>
+      </article>
+      <article class="room">
+        <h4>Island bus tour and dinner</h4>
+        <p>Guided bus tour around the island with a dinner stop – $120 · Near Merriton Landing, Yellow Leaf Bay</p>
+        <label><input type="checkbox" class="trip-item" data-id="exc2"
+          data-label="Excursion – Island Bus Tour and Dinner" data-price="120" data-group="excursion"> Select</label>
+      </article>
+    </section>
+
+    <section id="faqs" class="screen">
+      <h2>FAQs</h2>
+      <h3>Frequently Asked Questions</h3>
+      <details class="box"><summary>What are the power options</summary><p>Power outlets are 120 volts (the same as in the United States). </p></details>
+      <details class="box"><summary>Island Alcohol Laws</summary><p>Alcohol is not allowed to be served or sold between the hours of midnight and 9:00 a.m.
+        The drinking age on Taniti is 18 and the drinking age is not strictly enforced.
+        </p></details>
+      <details class="box"><summary>What is the primary language</summary><p>Many younger Tanitians speak fluent English. Very little English is spoken in rural areas, especially by the older residents.</p></details>
+
+      <div class="box">
+        <h3>Need Support?</h3>
+        <p>Contact us</p>
+        <textarea rows="4" placeholder="Text message here" style="width:100%"></textarea>
+        <button type="button" class="submit-btn">Submit Request</button>
+        <p>Phone: 1-800-SUPPORT</p>
+        <p>Email: visitor@tanitisupport.com</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="trip-bar">
+
+    <div id="trip-panel" class="hidden">
+      <h3>Trip Details</h3>
+      <p>Dates: <span class="trip-dates">11/26 – 11/30</span></p>
+      <p>Travelers: 4</p>
+      <ul id="trip-lines"></ul>
+      <p id="empty-msg">Nothing selected yet. Choose a room or add-on first.</p>
+
+      <h3>Payment Method</h3>
+      <label><input type="radio" name="pay" checked> Card</label>
+      <label><input type="radio" name="pay"> Rewards</label>
+      <p class="note">Prototype only. Do not enter real card details.</p>
+      <input type="text" placeholder="Name">
+      <input type="text" placeholder="Number">
+      <input type="text" placeholder="Exp Date">
+      <input type="text" placeholder="CVV">
+      <button type="button" id="pay-btn">PAY NOW</button>
+      <p id="thanks" class="hidden"></p>
+    </div>
+
+    <div class="trip-row">
+      <button id="expand-btn" aria-label="Expand trip summary">&#9650;</button>
+      <div class="trip-info">
+        <strong>Your Trip Summary: <span id="trip-total">$0.00</span></strong>
+        <span>Dates: <span class="trip-dates">11/26 – 11/30</span> | Travelers: 4</span>
+      </div>
+      <button id="checkout-btn">Checkout</button>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
