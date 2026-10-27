@@ -52,7 +52,17 @@
           <option value="rating">Rating</option>
         </select>
       </label>
-      <p><a href="#" class="link" data-screen="home" data-scroll="calendar-box">Dates: <span class="trip-dates">11/26 – 11/30</span> (tap to change)</a> | Travelers: 4</p>
+      <p><a href="#" class="link" data-screen="home" data-scroll="calendar-box">Dates: <span class="trip-dates">11/26 – 11/30</span> (tap to change)</a> | Travelers:
+        <select id="travelers" aria-label="Number of travelers">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option selected>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select></p>
 
       <div id="room-list">
         <article class="room" data-sleeps="6" data-price="1500" data-rating="5">
@@ -192,7 +202,7 @@
     <div id="trip-panel" class="hidden">
       <h3>Trip Details</h3>
       <p>Dates: <span class="trip-dates">11/26 – 11/30</span></p>
-      <p>Travelers: 4</p>
+      <p>Travelers: <span class="trip-travelers">4</span></p>
       <ul id="trip-lines"></ul>
       <p id="empty-msg">Nothing selected yet. Choose a room or add-on first.</p>
 
@@ -212,7 +222,7 @@
       <button id="expand-btn" aria-label="Expand trip summary">&#9650;</button>
       <div class="trip-info">
         <strong>Your Trip Summary: <span id="trip-total">$0.00</span></strong>
-        <span>Dates: <span class="trip-dates">11/26 – 11/30</span> | Travelers: 4</span>
+        <span>Dates: <span class="trip-dates">11/26 – 11/30</span> | Travelers: <span class="trip-travelers">4</span></span>
       </div>
       <button id="checkout-btn">Checkout</button>
     </div>
